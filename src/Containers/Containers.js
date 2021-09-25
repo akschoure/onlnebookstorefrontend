@@ -3,7 +3,7 @@ import Home from '../Layout/Home';
 import About from '../Layout/About';
 import Contact from '../Layout/Contact';
 
-function Container(){
+function Containers(){
     return(
         <div className="App">
           <BasicRouting></BasicRouting>
@@ -14,7 +14,7 @@ function Container(){
 function BasicRouting(){
     return(
         <div>
-            <h1>Online Book Store</h1>
+           
             <hr/>
             <Router>
                 <Link to="/">Home</Link> | <Link to="/about">About us</Link> | <Link to="/contact">Contact us</Link>
@@ -33,4 +33,4 @@ function BasicRouting(){
     );
 }
 
-export default Container;
+export default Containers;

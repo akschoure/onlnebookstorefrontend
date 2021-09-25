@@ -1,8 +1,15 @@
+
+import { Container,Row , Jumbotron , Col } from 'react-bootstrap';
 function Home(){
+    //const marginTop = {
+     //   marginTop:"20px"
+     // };
     return(
+
+        
         <div>
-            <div className="jumbotron text-centre">
-                <h1>Online Book Store</h1>
+            <div >
+     
             </div>
         </div>
     );
