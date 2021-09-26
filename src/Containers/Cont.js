@@ -1,18 +1,18 @@
-import logo from './logo.svg';
+/*import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css'
-import Containers from './Containers/Containers';
+import Containers from './Containers';
 import NavgationBar from './Components/NavigationBar';
 import { Container,Row , Jumbotron , Col } from 'react-bootstrap';
 import Footer from './Components/Footer';
 
-function App() {
+function Cont() {
  const marginTop = {
   marginTop:"20px"
 };
   return (
-    <div className="App">
-    
+    <div className="Cont">
+     <BasicRouting></BasicRouting>
         
     <Container>
         <Row>
@@ -21,6 +21,7 @@ function App() {
                  <p>
                  <h1>Online Book Store</h1>
 
+                 <NavgationBar/> 
                  <Containers></Containers>
                  <Footer></Footer>
       
@@ -38,4 +39,5 @@ function App() {
   );
 }
 
-export default App;
+export default Cont;
+*/
