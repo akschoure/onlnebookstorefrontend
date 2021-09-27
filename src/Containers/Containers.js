@@ -5,6 +5,9 @@ import Contact from '../Layout/Contact';
 import Category from '../Categories/Category';
 import Author from '../Authors/Author';
 import Books from '../ProductCatalog/Books'
+import Login from '../Membership/Login';
+import Register from '../Membership/Register';
+import Bookss from '../ProductCatalog/Bookss';
 
 function Containers(){
     return(
@@ -19,8 +22,8 @@ function BasicRouting(){
         <div>
            
             <hr/>
-            <Router>
-                <Link to="/">Home</Link> |  <Link to="/books">Books</Link> |  <Link to="category">Category</Link> | <Link to="author">Author</Link> | <Link to="/about">About us</Link> | <Link to="/contact">Contact us</Link> 
+            
+            <Link to="/bookss">Bookss</Link> | <Link to="/login">Log</Link> | <Link to="/register">Register</Link> | <Link to="/contact">Contact us</Link>  
              <hr/>
 
               < Switch>
@@ -30,8 +33,11 @@ function BasicRouting(){
                 <Route exact path="/category"><Category/></Route>
                 <Route exact path="/author"><Author/></Route>
                 <Route exact path= "/books"><Books/></Route>
+                <Route exact path= "/login"><Login/></Route>
+                <Route exact path= "/register"><Register/></Route>
+                <Route exact path= "/bookss"><Bookss/></Route>
               </Switch>
-            </Router>
+            
         </div>
     );
 }

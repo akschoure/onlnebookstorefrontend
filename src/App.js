@@ -5,6 +5,8 @@ import Containers from './Containers/Containers';
 import NavgationBar from './Components/NavigationBar';
 import { Container,Row , Jumbotron , Col } from 'react-bootstrap';
 import Footer from './Components/Footer';
+import NavigationBar from './Components/NavigationBar';
+import {BrowserRouter as Router,Link,Switch,Route} from 'react-router-dom';
 
 function App() {
  const marginTop = {
@@ -12,26 +14,27 @@ function App() {
 };
   return (
     <div className="App">
-    
-        
+    <Router>
+    <h1>Online Book Store</h1>
+    <NavigationBar></NavigationBar>
     <Container>
         <Row>
           <Col lg={12} style={marginTop}>
             <Jumbotron className="bg-dark text-white">
-                 <p>
-                 <h1>Online Book Store</h1>
-
+                 
+                 
+                 
                  <Containers></Containers>
                  <Footer></Footer>
-      
-                </p>
+               
+                
             </Jumbotron>
           </Col>
         </Row> 
 
 
      </Container>
-
+    </Router>
         
 
     </div>

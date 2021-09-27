@@ -10,7 +10,7 @@ render(){
 
         <Navbar fixed="bottom" bg="dark" varient="dark">
             <Container>
-                <Col lg={12} ClassName="text-center text-muted">
+                <Col lg={12} className="text-center text-muted">
                     <div> Footer </div>
                 </Col>
             </Container>

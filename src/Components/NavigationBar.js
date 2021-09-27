@@ -1,4 +1,4 @@
-/*
+import {BrowserRouter as Router,Link,Switch,Route} from 'react-router-dom';
 import React from 'react';
 import {Navbar , Nav} from 'react-bootstrap';
 class NavigationBar extends React.Component{
@@ -13,13 +13,22 @@ class NavigationBar extends React.Component{
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <Link to="/"class="nav-link active" aria-current="page" >Home</Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Category</a>
+                <Link to="/books" class="nav-link" >Books</Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Author</a>
+                <Link to="/category" class="nav-link" >Category</Link>
+              </li>
+              <li class="nav-item">
+                <Link to="/author"class="nav-link" >Author</Link>
+              </li>
+              <li class="nav-item">
+                <Link to="/login"class="nav-link" >Log in</Link>
+              </li>
+              <li class="nav-item">
+                <Link to="/register"class="nav-link" >Register</Link>
               </li>
               
 
@@ -35,4 +44,3 @@ export default NavigationBar;
 //<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
 //</li>  
 
-*/
