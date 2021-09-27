@@ -23,24 +23,27 @@ class Author extends Component{
                 <table class="table table-dark">
   <thead>
     <tr>
-      <th scope="col">Number</th>
-      <th scope="col">Author Name</th>
-      <th scope="col">Discription</th>
+      {/* <th >Number</th> */}
+      <th >Author Name</th>
+      <th >Discription</th>
+      <th >Action</th>
       
     </tr>
   </thead>
   <tbody>
    {this.state.author.map(b=>(
        <tr>
-           <td>{b.authorid}</td>
+           {/* <td>{b.authorid}</td> */}
            <td>{b.authorname}</td>
-           <td>{b.discription}</td>
-          
+           <td>{b.description}</td>
+           <td> <button className="btn btn-success" onClick={() => this.saveBook(user.id)}> GoToBooks </button></td>
        </tr>
+       
    ))
 
    }
   </tbody>
+  
 </table>
                 {}
             </div>

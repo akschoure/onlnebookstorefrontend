@@ -35,7 +35,7 @@ class  Login extends React.Component{
         })
         .catch(err=>{
           console.log(err)
-          // alert("Something Wrong!")
+          alert("Something Wrong!")
         })
       }else{
         alert("All field are required!")
@@ -56,7 +56,7 @@ class  Login extends React.Component{
 
    
     {/* <form> */}
-      <input type="email" id="login" className="fadeIn third" name="emailid" placeholder="Email Id" value={this.state.emailid} onChange={this.onchange} />
+      <input type="text" id="login" className="fadeIn second" name="emailid" placeholder="Email Id" value={this.state.emailid} onChange={this.onchange} />
       <input type="text" id="password" className="fadeIn third" name="password" placeholder="password" value={this.state.password} onChange={this.onchange} />
       <input type="submit" className="fadeIn fourth" value="Log In" onClick={this.userLogin}/>
     {/* </form> */}

@@ -7,7 +7,7 @@ import Author from '../Authors/Author';
 import Books from '../ProductCatalog/Books'
 import Login from '../Membership/Login';
 import Register from '../Membership/Register';
-import Bookss from '../ProductCatalog/Bookss';
+
 
 function Containers(){
     return(
@@ -23,7 +23,7 @@ function BasicRouting(){
            
             <hr/>
             
-            <Link to="/bookss">Bookss</Link> | <Link to="/login">Log</Link> | <Link to="/register">Register</Link> | <Link to="/contact">Contact us</Link>  
+         
              <hr/>
 
               < Switch>
@@ -35,8 +35,10 @@ function BasicRouting(){
                 <Route exact path= "/books"><Books/></Route>
                 <Route exact path= "/login"><Login/></Route>
                 <Route exact path= "/register"><Register/></Route>
-                <Route exact path= "/bookss"><Bookss/></Route>
+            
               </Switch>
+
+             
             
         </div>
     );

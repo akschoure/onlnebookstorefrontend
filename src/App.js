@@ -15,18 +15,16 @@ function App() {
   return (
     <div className="App">
     <Router>
-    <h1>Online Book Store</h1>
+   
     <NavigationBar></NavigationBar>
     <Container>
         <Row>
           <Col lg={12} style={marginTop}>
             <Jumbotron className="bg-dark text-white">
                  
-                 
-                 
                  <Containers></Containers>
-                 <Footer></Footer>
                
+                 <Footer></Footer>
                 
             </Jumbotron>
           </Col>
@@ -35,6 +33,7 @@ function App() {
 
      </Container>
     </Router>
+   
         
 
     </div>
