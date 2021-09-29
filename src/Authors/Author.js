@@ -1,16 +1,20 @@
+//import React, { useReducer } from 'react';
 import {Component, React , useEffect , useState}  from 'react';
 import api from "../Service/authorservice"
+
 class Author extends Component{
     constructor(props){
         super(props);
         this.state={
-            author:[]
+            author:[],
+           
         }
     }
     componentDidMount=()=>{
         api.fetchAllAuthor()
         .then(resp=>{
             console.log(resp.data)
+            this.setState({red:true});
             this.setState({author:resp.data})
         })
         .catch(err=>{
@@ -18,6 +22,8 @@ class Author extends Component{
         })
     }
     render(){
+
+    
         return(
             <div>
                 <table class="table table-dark">

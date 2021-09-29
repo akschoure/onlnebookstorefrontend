@@ -14,9 +14,8 @@ render(){
             <Container>
                 <Col lg={12} className="text-center text-muted">
               
-                    <Link to="/contact"><h5>Contact us</h5></Link>   |    <Link to="/about"><h5>About us</h5></Link> 
-                  
-                     <h2>All rights reserved</h2>
+                    <Link to="/contact"><h5>Contact us</h5></Link>   |   <Link to="/about"><h5>About us</h5></Link> |  <Link to="/help"><h5>Help</h5></Link>
+                
                 </Col>
             </Container>
         </Navbar>

@@ -9,7 +9,7 @@ class ApiService {
 
     loginUser(em, pass) {
 
-        return axios.post(""+USER_API_BASE_URL + '/login/'+em+'/'+pass);
+        return axios.post(USER_API_BASE_URL + '/login/'+em+'/'+pass);
     }
      
     addUser(user) {

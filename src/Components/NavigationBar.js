@@ -2,7 +2,12 @@ import {BrowserRouter as Router,Link,Switch,Route} from 'react-router-dom';
 import React from 'react';
 import {Navbar , Nav} from 'react-bootstrap';
 class NavigationBar extends React.Component{
+  logout=()=>{
+    alert("Logout Sucessfull!")
+    localStorage.clear();
+  }
  render(){
+   
      return (
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -30,7 +35,13 @@ class NavigationBar extends React.Component{
               <li class="nav-item">
                 <Link to="/register"class="nav-link" >Register</Link>
               </li>
-              
+              <li class="nav-item">
+                <a href="#"class="nav-link"onClick={this.logout} >Logout</a>
+              </li>
+
+              <li class="nav-item">
+                <Link className="nav-link" to="/cart">My Cart</Link>
+              </li>
 
             </ul>
           </div>

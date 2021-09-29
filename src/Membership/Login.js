@@ -28,7 +28,7 @@ class  Login extends React.Component{
       if(this.state.emailid!==null||this.state.password!==null||this.state.emailid!==''||this.state.password!==''){
         api.loginUser(this.state.emailid, this.state.password)
         .then(resp=>{
-          console.log(resp.data)
+          // console.log(resp.data)
           localStorage.setItem("uid", resp.data.userid);
           this.setState({red:true});
           alert("Login Sucessfull!")
@@ -41,6 +41,7 @@ class  Login extends React.Component{
         alert("All field are required!")
       }
     }
+    
     render(){
       if(this.state.red){
         return <Redirect to="/"/>
@@ -51,7 +52,7 @@ class  Login extends React.Component{
                  <div className="wrapper fadeInDown">
                   <div id="formContent">
                 <div className="fadeIn first">
-      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+      <img src="https://png.pngitem.com/pimgs/s/111-1114742_person-icon-hd-png-download.png" id="icon" alt="User Icon" />
     </div>
 
    

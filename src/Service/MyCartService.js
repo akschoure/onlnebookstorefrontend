@@ -7,14 +7,20 @@ class ApiService {
 
 
 
-    fetchAllCart(cid) {
-        return axios.get(MYCART_API_BASE_URL + '/allcart/'+cid);
+    // fetchAllCart(cid) {
+    //     return axios.get(MYCART_API_BASE_URL + '/allcart/'+cid);
+    // }
+
+    fetchAllCart() {
+        return axios.get(MYCART_API_BASE_URL + '/allcart');
     }
-    addToCart(cid, bid) {
-        return axios.get(MYCART_API_BASE_URL + '/allcart/'+cid+'/'+bid);
+
+    addToCart(adcrt) {
+        // console.log(adcrt)
+        return axios.post(""+MYCART_API_BASE_URL + '/addcart/',adcrt);
     }
 
   
-}
+}      
 
 export default new ApiService();
