@@ -1,5 +1,6 @@
 //import React, { useReducer } from 'react';
 import {Component, React , useEffect , useState}  from 'react';
+import {Redirect} from 'react-router-dom'
 import capi from "../Service/MyCartService"
 
 class MyCart extends Component{
@@ -7,25 +8,44 @@ class MyCart extends Component{
         super(props);
         this.state={
             mycart:[],
+            red:false
            
         }
     }
     componentDidMount=()=>{
-        capi.fetchAllCart()
+        if(localStorage.getItem("uid")!==null){
+        capi.fetchCartByUserId(localStorage.getItem("uid"))
         .then(resp=>{
             console.log(resp.data)
             //this.setState({red:true});
             this.setState({mycart:resp.data})
+            console.log(this.state.mycart);
         })
         .catch(err=>{
         console.log(err)
         })
+    }else{
+        alert("Login first!")
+    }
+    }
+    rmCart=(id)=>{
+    capi.removeFromMyCart(id)
+    .then(resp=>{
+        this.setState({
+            red:false
+        })
+        alert("Remove Successfully!")
+        console.log(resp.data)
+    })
     }
     render(){
 
-    
+    if(this.state.red){
+        return <Redirect to="/cart"/>
+    }
         return(
             <div>
+                <h2 className="text-center">My Cart List</h2>
                 <table class="table table-dark">
   <thead>
     <tr>
@@ -34,6 +54,7 @@ class MyCart extends Component{
       <th >Author Name</th>
       <th >Price</th>
       <th >Quantity</th>
+      <th >Action</th>
       
       
       
@@ -45,20 +66,20 @@ class MyCart extends Component{
        <tr>
            {/* <td>{b.authorid}</td> */}
            <td>{c.books.title}</td>
-           <td>{c.author.authorname}</td>
+           <td>{c.books.author.authorname}</td>
            <td>{c.books.price}</td>
            <td>{c.quantity}</td>
-        
-           <td> <button className="btn btn-success" onClick={() => this.saveBook(user.id)}> GoToBooks </button></td>
+           <td><button className="btn btn-danger" onClick={()=>this.rmCart(c.cartid)}> Remove </button></td>
+          
        </tr>
        
    ))
-
+    
    }
   </tbody>
   
 </table>
-                {}
+<button className="btn btn-success" onClick={this.byClick}> Buy </button>
             </div>
         )
     }

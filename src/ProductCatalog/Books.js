@@ -1,24 +1,47 @@
 import React, { Component } from 'react'
 import api from "../Service/bookservice";
 import capi from "../Service/MyCartService"
-import {Link} from "react-router-dom"
+import {Link, Redirect} from "react-router-dom"
+
 class Books extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
             books: [],
-            message: null
+            message: null,
+            red:false
         }
       
-        this.myCart = this.myCart.bind(this);
+        // this.myCart = this.myCart.bind(this);
         
         this.reloadBooks = this.reloadBooks.bind(this);
     }
 
-    componentDidMount() {
+    componentDidMount(prevProps) {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const auid = urlParams.get('aid');
+        const catid = urlParams.get('cid')
+        console.log(auid)
+        // if (prevProps.location.key !== this.props.location.key) {
+        //     this.setState({red:true})
+        //     alert("Ni")
+        // }
+        if(auid!==null){
+            this.reloadAuthBooks(auid);
+            // alert("a3")
+            return;
+            
+        }
+        if( catid!==null){
+            this.reloadCatBooks(catid);
+            // alert("2")
+            return;
+            // alert("2")
+        }
         this.reloadBooks();
-        
+        // alert("3")
     }
 
     reloadBooks() {
@@ -30,22 +53,40 @@ class Books extends Component {
             
 
     }
+    reloadAuthBooks(id) {
+        api.fetchAllBooksByAuthor(id)
+            .then((resp) => {
+                this.setState({books: resp.data})
+                console.log(this.state.books);
+            });
+            
+
+    }
+    reloadCatBooks(id) {
+        api.fetchAllBooksByCategory(id)
+            .then((resp) => {
+                this.setState({books: resp.data})
+                console.log(this.state.books);
+            });
+            
+
+    }
 
     
-    myCart(bookid) {
-        window.localStorage.setItem("userId", bookid);
-        this.props.history.push('/mycart');
-    }
+    // myCart(bookid) {
+    //     window.localStorage.setItem("userId", bookid);
+    //     this.props.history.push('/mycart');
+    // }
     addToCart=(bid)=>{
         var uid = localStorage.getItem("uid");
         if(uid!==null){
             
-        var cart = {
-            userId:uid,
-            bookId:bid,
-            quantity:1
-        }
-        capi.addToCart(cart)
+        // var cart = {
+        //     userId:uid,
+        //     bookId:bid,
+        //     quantity:1
+        // }
+        capi.addToCart(uid, bid)
         .then((resp) => {
             console.log(resp.data)
             // this.setState({books: resp.data})

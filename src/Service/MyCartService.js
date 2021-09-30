@@ -11,15 +11,18 @@ class ApiService {
     //     return axios.get(MYCART_API_BASE_URL + '/allcart/'+cid);
     // }
 
-    fetchAllCart() {
-        return axios.get(MYCART_API_BASE_URL + '/allcart');
+    fetchCartByUserId(userid) {
+        return axios.get(MYCART_API_BASE_URL + '/byuserid/'+userid);
     }
 
-    addToCart(adcrt) {
+    addToCart(uid, bid) {
         // console.log(adcrt)
-        return axios.post(""+MYCART_API_BASE_URL + '/addcart/',adcrt);
+        return axios.post(MYCART_API_BASE_URL + '/addcart/'+uid+'/'+bid);
     }
-
+   
+    removeFromMyCart(cartid){
+        return axios.delete(MYCART_API_BASE_URL + '/removecart/'+cartid);
+    }
   
 }      
 
